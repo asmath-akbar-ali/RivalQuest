@@ -1,0 +1,55 @@
+Structure of the Project: RivalQuest
+
+RivalQuest/
+│── README.md
+│── .gitignore
+│── docker-compose.yml          # For running all services together
+│── package.json                # (optional, if root configs needed)
+│
+├── frontend/                   # React.js (User/Admin/Contest Maker)
+│   ├── public/
+│   ├── src/
+│   │   ├── assets/             # images, icons, logos
+│   │   ├── components/         # reusable UI components
+│   │   ├── pages/              # Login, Dashboard, Contests, Admin
+│   │   ├── services/           # API calls (Axios)
+│   │   ├── context/            # State management (Redux/Context API)
+│   │   ├── App.js
+│   │   └── index.js
+│   └── package.json
+│
+├── backend/                    # Java Spring Boot
+│   ├── src/main/java/com/skillrivals/
+│   │   ├── controller/         # REST Controllers
+│   │   ├── service/            # Business logic
+│   │   ├── model/              # Entities (User, Contest, etc.)
+│   │   ├── repository/         # MongoDB Repositories
+│   │   ├── config/             # Security, JWT, CORS config
+│   │   └── SkillRivalsApp.java
+│   ├── src/main/resources/
+│   │   ├── application.properties  # DB, server configs
+│   │   └── static/ & templates/ (if needed)
+│   └── pom.xml                 # Maven build file
+│
+├── ai-engine/                  # Python (FastAPI/Flask)
+│   ├── app/
+│   │   ├── main.py             # Entry point for FastAPI
+│   │   ├── routes/             # API routes
+│   │   ├── services/           # Recommendation, cheat detection
+│   │   ├── models/             # ML/DL models
+│   │   ├── utils/              # Helpers (data processing)
+│   │   └── requirements.txt    # Python dependencies
+│   └── tests/                  # Unit tests
+│
+├── database/                   # Database related configs
+│   ├── init/                   # Mongo init scripts
+│   ├── schemas/                # Contest/User schema docs
+│   └── migrations/             # If using migrations
+│
+└── devops/                     # Deployment & CI/CD
+    ├── Dockerfile.frontend
+    ├── Dockerfile.backend
+    ├── Dockerfile.ai
+    ├── kubernetes/             # K8s manifests (optional)
+    └── ci-cd.yml               # GitHub Actions/Jenkins pipeline
+    
